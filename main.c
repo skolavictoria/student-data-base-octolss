@@ -15,11 +15,11 @@ int main() {
 
     do {
         printf("Enter the name of a student: ");
-        fgets(students[count].name, sizeof(students[count].name), stdin);
-        students[count].name[strcspn(students[count].name, "\n")] = 0; // Удаляем символ новой строки
+        fgets(students[count].name, sizeof(students[count].name), stdin);//only worked with fgets(scanf didnt work)
+        students[count].name[strcspn(students[count].name, "\n")] = 0;
         printf("Enter the surname of a student: ");
         fgets(students[count].surname, sizeof(students[count].surname), stdin);
-        students[count].surname[strcspn(students[count].surname, "\n")] = 0; // Удаляем символ новой строки
+        students[count].surname[strcspn(students[count].surname, "\n")] = 0;
         printf("Enter the age of a student: ");
         scanf("%d", &students[count].age);
         printf("Enter the grade of a student: ");
@@ -29,7 +29,7 @@ int main() {
         printf("Do you want to add a student to the database? [Y/N]: ");
         scanf(" %c", &answer1);
         getchar();
-    } while (answer1 != 'N' && answer1 != 'n');
+    } while (answer1 != 'N' && answer1 != 'n');//this code part was fixed and modified with chatGPT
 
     FILE *fp;
     fp = fopen("students.bin", "ab+");
@@ -56,7 +56,7 @@ int main() {
         printf("Enter name or surname: ");
         getchar();
         fgets(name_surname, sizeof(name_surname), stdin);
-        name_surname[strcspn(name_surname, "\n")] = 0; // Удаляем символ новой строки
+        name_surname[strcspn(name_surname, "\n")] = 0;
         for (i = 0; i < count; i++) {
             if (strcmp(students[i].name, name_surname) == 0 || strcmp(students[i].surname, name_surname) == 0) {
                 printf("Name: %s\n", students[i].name);
@@ -80,3 +80,4 @@ int main() {
 
     return 0;
 }
+//different code parts were modified by the chatGPT
