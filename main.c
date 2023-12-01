@@ -29,7 +29,7 @@ int main() {
         printf("Do you want to add a student to the database? [Y/N]: ");
         scanf(" %c", &answer1);
         getchar();
-    } while (answer1 != 'N' && answer1 != 'n');//this code part was fixed and modified with chatGPT
+    } while (answer1 != 'N' && answer1 != 'n');
 
     FILE *fp;
     fp = fopen("students.bin", "ab+");
@@ -80,4 +80,4 @@ int main() {
 
     return 0;
 }
-//different code parts were modified by the chatGPT
+//different code parts were fixed by chatGPT
